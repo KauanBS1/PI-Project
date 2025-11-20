@@ -32,8 +32,10 @@ body {
 .header {
   height: var(--tamanho-header);
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  background-color: #0000006b;
+  background-color: transparent;
   font-weight: 500;
 }
 
@@ -47,6 +49,7 @@ body {
   text-decoration: none;
   color: #f0f0f0;
   transition: 0.9s;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
 .header a:hover{
@@ -104,6 +107,8 @@ body {
   background-image: url('../assets/imgs/fundoPrincipal.png');
   background-size: cover;
   background-attachment: fixed;
+  background-repeat: no-repeat;
+  padding-top: var(--tamanho-header);
 }
 
 
@@ -415,3 +420,10 @@ input:focus{
   75%  {transform: rotate(-25deg)}
   100% {transform: rotate(25deg)}
 }
+
+@media (max-width: 768px) {
+  :root {
+    --tamanho-header: 70px;   /* menor header no celular */
+  }
+}
+
