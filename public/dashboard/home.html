@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="../assets/icon/logo.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singularity | Home</title>
+
+
+    <link rel="stylesheet" href="./../css/dashboards.css">
+    <link rel="stylesheet" href="./../css/estilo.css" />
+
+    <script src="../js/sessao.js"></script>
+    <script src="../js/alerta.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="janela">
+        <!-- INICIO menu lateral -->
+        <div class="header-left dash-header">
+
+            <img src="../assets/logoHorizontal.png">
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+
+            <div class="btn-nav">
+                <h3>Home</h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./dashboard.html">
+                    <h3>Quiz</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./dashboard.html">
+                    <h3>Dashboard</h3>
+                </a>
+            </div>
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+        </div>
+        <!-- FIM menu lateral -->
+
+        <div class="dash">
+            <div class="box-banner" id="inicio">
+                <div class="banner-home">
+                    <div class="text">
+                        <p><span>O cinema</span> despertou nossa curiosidade. <br>Agora <span>é sua vez</span> de explorar o universo de verdade.</p>
+                    </div>
+                    <div class="btn-quiz">
+                        <a href="#">Responder Quiz</a>
+                    </div>
+                </div>                
+            </div>
+
+            <div class="conteudo">
+                <div class="bloco">
+                    <div class="text">
+                        <div class="texts">
+                            <h2>O que é um buraco negro?</h2>
+                            <p>Um buraco negro é uma região do espaço onde a gravidade é tão intensa que nada consegue escapar, nem mesmo a luz. Em Interestelar, o buraco negro chamado Gargantua é representado com um disco de luz ao redor, causado pela matéria sendo puxada em alta velocidade.</p>
+                        </div>
+                    </div>
+                    <div class="img">
+                        <img src="../assets/imgs/gargantua.jpg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="conteudo">
+                <div class="bloco">
+                    <div class="text">
+                        <div class="texts">
+                            <h2>O que é uma galáxia?</h2>
+                            <p>Galáxias são enormes conjuntos de estrelas, planetas, poeira e gás, todos unidos pela gravidade. A Via Láctea é a galáxia onde vivemos. No filme, as viagens intergalácticas são possíveis por meio do buraco de minhoca.</p>
+                        </div>
+                    </div>
+                    <div class="img">
+                        <img src="../assets/imgs/via-lactea.jpg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="conteudo">
+                <div class="bloco">
+                    <div class="text">
+                        <div class="texts">
+                            <h2>Tempo vs Gravidade (Dilatação do tempo)</h2>
+                            <p>A teoria da relatividade mostra que quanto mais forte a gravidade, mais devagar o tempo passa. Isso explica a cena em que os personagens passam 1 hora em um planeta, enquanto 7 anos se passam na Terra. Esse é um efeito real e comprovado pela física.</p>
+                        </div>
+                    </div>
+                    <div class="img">
+                        <img src="../assets/imgs/relatividade.jpg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="conteudo">
+                <div class="bloco">
+                    <div class="text">
+                        <div class="texts">
+                            <h2>O que é um buraco de minhoca?</h2>
+                            <p>É uma passagem teórica que conecta dois pontos distantes do espaço-tempo, funcionando como um “atalho”. No filme, a NASA descobre um buraco de minhoca perto de Saturno, que permite viajar para outra galáxia.</p>
+                        </div>
+                    </div>
+                    <div class="img">
+                        <img src="../assets/imgs/buraco-de-minhoca.gif">
+                    </div>
+                </div>
+            </div>
+
+            <div class="conteudo">
+                <div class="bloco">
+                    <div class="text">
+                        <div class="texts">
+                            <h2>O que é uma singularidade?</h2>
+                            <p>É o ponto central de um buraco negro onde a densidade e a gravidade se tornam infinitas. No filme, Cooper entra na singularidade de Gargantua, levando à famosa cena do “tesseract”.</p>
+                        </div>
+                    </div>
+                    <div class="img">
+                        <img src="../assets/imgs/singularidade.jpg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="conteudo">
+                <div class="bloco">
+                    <div class="text">
+                        <div class="texts">
+                            <h2>O que é o tesseract?</h2>
+                            <p>É uma representação visual de uma dimensão extra. No filme, Cooper acessa uma estrutura tridimensional que representa o tempo como um espaço físico, permitindo que ele interaja com o passado da filha, Murphy.</p>
+                        </div>
+                    </div>
+                    <div class="img">
+                        <img src="../assets/imgs/tesseract.jpg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="icon-top">
+                <img src="../assets/icon/arrowhead-up.png">
+            </div> -->
+        </div>
+    </div>
+</body>
+
+<script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    function exibirAquarios() {
+        JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
+            document.getElementById("cardAquarios").innerHTML += `
+                    <div class="card-aquario">
+                        <div class="title-aquario">
+                            <h1>${item.descricao}</h1>
+                        </div>
+                        <div class="desc-aquario">
+                        <div class="temperatura">
+                            <p id="temp_aquario_${item.id}">-°C</p>
+                        </div>
+                        <div class="cor-alerta" id="card_${item.id}"></div>
+                    </div>
+                    </div>
+                    `
+        });
+    }
+
+</script>
+
+</html>

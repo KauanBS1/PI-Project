@@ -5,7 +5,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins','Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .label-captura {
@@ -112,7 +112,11 @@ body {
 /* pagina graficos */
 
 .dash-header {
-  background-color: #212124;
+  background-color: #020300;
+}
+
+.dash-header img{
+  height: 50px;
 }
 
 .dash {
@@ -120,7 +124,7 @@ body {
   position: relative;
   top: 0;
   left: 20%;
-  background-color: #161618;
+  background-color: #F6F7F8;
   height: 100vh;
   overflow: auto;
 }
@@ -348,8 +352,7 @@ canvas {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
-  background-color: #212124;
+  background-color: #020300;
 }
 
 .dash-right {
@@ -375,7 +378,7 @@ canvas {
 }
 
 .hello h3 {
-  color: #e3b062;
+  color: #F6F7F8;
   font-weight: 300;
   font-size: 1.2rem;
 }
@@ -386,8 +389,8 @@ canvas {
 
 .btn-nav {
   width: 40%;
-  color: white;
-  background-color: #e6005a;
+  color: #000;
+  background-color: #F6F7F8;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
@@ -396,14 +399,14 @@ canvas {
 .btn-nav-white {
   width: 40%;
   background-color: white;
-  border: 3px solid #e6005a;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
+
 }
 
 .btn-nav-white h3 {
-  color: #e6005a;
+  color: #000;
   padding: 0;
   margin: 0;
 }
@@ -412,17 +415,115 @@ canvas {
 .btn-logout h3 {
   margin: 0;
   padding: 0;
+  font-weight: 500;
 }
 
 .btn-logout {
   margin: 0;
   padding: 0;
   width: 20%;
-  background-color: #32b9cd;
+  background-color: #077187;
   color: white;
-  border-radius: 10px;
+  border-radius: 5px;
   text-align: center;
-  padding: 10px 15px;
+  padding: 5px 20px;
   margin-bottom: 100px;
   cursor: pointer;
+  transition: 0.5s;
+}
+
+.btn-logout:hover{
+  background-color: #077e96;
+}
+
+/* Banner Home */
+.box-banner{
+  display: flex;
+  justify-content: center;
+  padding-top: 5vh;
+}
+
+.banner-home{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 25vh;
+  width: 75vw;
+  background-image: url(../assets/imgs/black-hole-1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 10px;
+  background-attachment: fixed;
+  background-position: 0px -150px;
+  border-radius: 10px;
+}
+
+.banner-home p{
+  color: #f1f1f1;
+  text-align: center;
+  font-size: 22px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.banner-home span{
+  font-weight: 700;
+}
+
+.banner-home a{
+  color: black;
+  text-decoration: none;
+  padding: 10px 25px;
+  background-color: #F6F7F8;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.conteudo{
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.conteudo .bloco{
+  display: flex;
+  justify-content: center;
+  width: 95%;
+  background-color: #e2e2e2;
+  border-radius: 10px;
+  padding: 10px 0 10px 0;
+}
+
+.conteudo .bloco .text{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 60%;
+}
+.conteudo .bloco .img{
+  display: flex;
+  justify-content: center;
+  width: 40%;
+}
+
+.conteudo .bloco .img img{
+  width: 80%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.texts{
+  width: 90%;
+}
+
+.icon-top{
+  height: 100px;
+  width: 100px;
+  background-color: #F6F7F8;
+  border-radius: 50%;
+  cursor: pointer;
+
+  position: fixed;
 }
