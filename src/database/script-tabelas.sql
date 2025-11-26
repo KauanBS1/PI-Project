@@ -7,13 +7,36 @@ comandos para mysql server
 */
 
 CREATE DATABASE singularity;
+
 USE singularity;
+
 
 CREATE TABLE usuario (
 	id_usuario INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50)
+	nome VARCHAR(50) NOT NULL,
+	email VARCHAR(50) NOT NULL,
+	senha VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE quiz (
+	id_quiz INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(45)
+);
+
+insert into quiz (nome) values
+	('Questionário Geral');
+
+CREATE TABLE partida(
+	id_partida int primary key auto_increment,
+    fk_id_usuario int not null,
+    fk_id_quiz int not null,
+    pontuacao int,
+    acertos int,
+    erros int,
+    foreign key (fk_id_usuario) 
+		references usuario(id_usuario),
+	foreign key (fk_id_quiz)
+		references quiz(id_quiz)
 );
 
 CREATE TABLE aviso (
@@ -21,32 +44,5 @@ CREATE TABLE aviso (
 	titulo VARCHAR(100),
 	descricao VARCHAR(150),
 	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
+	FOREIGN KEY (fk_usuario) REFERENCES usuario(id_usuario)
 );
-
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	descricao VARCHAR(300),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
-);
-
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
-
-create table medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	dht11_umidade DECIMAL,
-	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
-	chave TINYINT,
-	momento DATETIME,
-	fk_aquario INT,
-	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
-);
-
-insert into empresa (razao_social, codigo_ativacao) values ('Empresa 1', 'ED145B');
-insert into empresa (razao_social, codigo_ativacao) values ('Empresa 2', 'A1B2C3');
-insert into aquario (descricao, fk_empresa) values ('Aquário de Estrela-do-mar', 1);
-insert into aquario (descricao, fk_empresa) values ('Aquário de Peixe-dourado', 2);

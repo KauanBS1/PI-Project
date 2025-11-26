@@ -120,14 +120,8 @@
             </div>
         </div>
     </div>
-
-
-
-
 </body>
-
 </html>
-
 <script>
 
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
@@ -135,32 +129,94 @@
     const listaDeQuestoes = [
 
         {
-            pergunta: "Qual mês tem 30 dias?",
-            alternativaA: "Janeiro",
-            alternativaB: "Dezembro",
-            alternativaC: "Junho",
-            alternativaD: "Agosto",
+            pergunta: "O que é um buraco negro?",
+            alternativaA: "Uma estrela em formação",
+            alternativaB: "Uma região com gravidade extremamente forte",
+            alternativaC: "Um planeta muito distante",
+            alternativaD: "Um tipo de cometa",
+            alternativaCorreta: "alternativaB"
+        },
+
+        {
+            pergunta: "Qual fenômeno explica o fato de o tempo passar mais devagar perto de um buraco negro?",
+            alternativaA: "Rotação dos planetas",
+            alternativaB: "Gravidade intensa",
+            alternativaC: "Vento solar",
+            alternativaD: "Impacto de meteoros",
+            alternativaCorreta: "alternativaB"
+        },
+
+        {
+            pergunta: "Como se chama a galáxia onde fica o Sistema Solar?",
+            alternativaA: "Andrômeda",
+            alternativaB: "Via Láctea",
+            alternativaC: "Olho de Sauron",
+            alternativaD: "Sombrero",
+            alternativaCorreta: "alternativaB"
+        },
+        
+        {
+            pergunta: "O que é uma galáxia?",
+            alternativaA: "Uma estrela gigante",
+            alternativaB: "Um conjunto de estrelas, planetas e poeira espacial",
+            alternativaC: "Apenas planetas próximos",
+            alternativaD: "Um buraco negro pequeno",
+            alternativaCorreta: "alternativaB"
+        },
+
+        {
+            pergunta: "O que é um wormhole (buraco de minhoca)?",
+            alternativaA: "Um túnel teórico que liga dois pontos distantes do espaço",
+            alternativaB: "Um buraco negro pequeno",
+            alternativaC: "Um meteorito oco",
+            alternativaD: "Uma estrela que está morrendo",
+            alternativaCorreta: "alternativaA"
+        },
+
+        {
+            pergunta: "No filme, o que explica a diferença extrema de tempo entre a equipe espacial e quem ficou na Terra?",
+            alternativaA: "A nave estava quebrada",
+            alternativaB: "A órbita deles era muito rápida",
+            alternativaC: "O planeta estava perto de um buraco negro",
+            alternativaD: "A Terra acelerou sua rotação",
             alternativaCorreta: "alternativaC"
         },
 
         {
-            pergunta: "Quantas horas tem em um dia?",
-            alternativaA: "30 horas",
-            alternativaB: "38 horas",
-            alternativaC: "48 horas",
-            alternativaD: "24 horas",
-            alternativaCorreta: "alternativaD"
+            pergunta: "Qual é o nome do buraco negro principal mostrado em Interestelar?",
+            alternativaA: "Gargântua",
+            alternativaB: "Atlas",
+            alternativaC: "Kronos",
+            alternativaD: "Centauri",
+            alternativaCorreta: "alternativaA"
         },
 
         {
-            pergunta: "Qual destes números é ímpar?",
-            alternativaA: "Dez",
-            alternativaB: "Doze",
-            alternativaC: "Oito",
-            alternativaD: "Onze",
+            pergunta: "O que um buraco negro faz com a luz?",
+            alternativaA: "Amplifica",
+            alternativaB: "Curva",
+            alternativaC: "Repele",
+            alternativaD: "Ilumina",
+            alternativaCorreta: "alternativaB"
+        },
+
+        {
+            pergunta: "O que a teoria da relatividade explica?",
+            alternativaA: "O movimento das nuvens",
+            alternativaB: "Por que o mar tem marés",
+            alternativaC: "O comportamento do espaço, tempo e gravidade",
+            alternativaD: "Como as plantas crescem",
+            alternativaCorreta: "alternativaC"
+        },
+
+        {
+            pergunta: "O que é uma singularidade em um buraco negro?",
+            alternativaA: "Uma estrela muito antiga",
+            alternativaB: "Um ponto onde a gravidade é extremamente fraca",
+            alternativaC: "Uma nuvem de poeira espacial",
+            alternativaD: "Um ponto onde a densidade e a gravidade se tornam infinitas",
             alternativaCorreta: "alternativaD"
         }
-
     ]
 
     // variáveis globais    
@@ -252,6 +308,7 @@
             preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual)
         } else {
             finalizarJogo()
+            salvarDados()
         }
         limparCoresBackgroundOpcoes()
     }
@@ -343,6 +400,29 @@
         btnSubmeter.disabled = true
         // btnConcluir.disabled = true
         btnTentarNovamente.disabled = false
+    }
 
+    function salvarDados(){
+        fetch("/partidas/salvar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                fk_usuario: sessionStorage.ID_USUARIO,
+                fk_quiz: 1,
+                pontuacao: pontuacaoFinal,
+                acertos: certas,
+                erros: erradas
+            }),
+        })
+            .then((res) => {
+                if (res.ok){
+                    console.log("Resultado salvo com sucesso!")
+                } else {
+                    console.log("Erro ao salvar o resultado.")
+                }
+            })
+            .catch((erro) => console.error("Erro no fetch:", erro))
     }
 </script>

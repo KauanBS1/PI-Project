@@ -21,7 +21,7 @@ function autenticar(req, res) {
                         console.log(resultadoAutenticar);
                         
                         res.json({
-                            id: resultadoAutenticar[0].id,
+                            id_usuario: resultadoAutenticar[0].id_usuario,
                             email: resultadoAutenticar[0].email,
                             nome: resultadoAutenticar[0].nome,
                             senha: resultadoAutenticar[0].senha
@@ -78,7 +78,18 @@ function cadastrar(req, res) {
     }
 }
 
+function listar(req, res){
+    usuarioModel.listar()
+        .then((resultado) => {
+            res.status(200).json(resultado);
+        })
+        .catch((erro) => {
+            res.status(500).json(erro);
+        });
+}
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    listar
 }
