@@ -13,7 +13,26 @@ function salvar(fk_usuario, fk_quiz, pontuacao, acertos, erros) {
     return database.executar(instrucaoSql);
 }
 
+function obterDados(idUsuario){
+    console.log("ACESSEI O PARTIDA MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function obterDados()");
+    var instrucaoSql = `
+    SELECT
+        partida.id_partida,
+        partida.pontuacao,
+        partida.acertos,
+        partida.erros,
+        quiz.nome
+    FROM partida
+        join quiz
+            on partida.fk_id_quiz = quiz.id_quiz
+        where partida.fk_id_usuario = ${idUsuario};
+    `;
+    console.log("Executando SQL: " + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 
 module.exports = {
-    salvar
+    salvar,
+    obterDados
 };

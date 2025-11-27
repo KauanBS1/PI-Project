@@ -528,3 +528,80 @@ canvas {
 
   position: fixed;
 }
+
+.kpis{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.dash .container{
+  justify-content: center;
+  width: 95%;
+}
+
+.kpi-card{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #131313;
+  color: #f1f1f1;
+  width: 30%;
+  border-radius: 5px;
+  margin-top: 40px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+.kpi-card .info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5px;
+}
+
+.kpi-card .circle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.kpi-card img{
+  height: 50px;
+}
+
+.kpi-card .info span{
+  font-weight: 500;
+}
+
+.kpi-card .info p{
+  font-weight: 800;
+  font-size: 38px;
+}
+
+#graficoErrosEAcertos{
+  gap: 20px;
+}
+
+.kpi-card .grafico {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.kpi-card .grafico h3{
+  font-size: 20px;
+  text-align: center;
+}
+
+.graficos {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
