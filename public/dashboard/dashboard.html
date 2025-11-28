@@ -80,7 +80,9 @@
                     <div class="kpi-card">
                         <div class="grafico">
                             <h3>Acertos e Erros Totais</h3>
-                            <canvas id="graficoErrosEAcertos"></canvas>
+                            <div class="graficoRosca">
+                                <canvas id="graficoErrosEAcertos"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -91,12 +93,13 @@
                 <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
             </div>
             <div id="graficos">
-                <div class="text" style="
-    text-align: center;"">
-                    <h3>Histórico de Partidas</h3>
-                </div>
-                <div class="partidas">
-                    <canvas id="graficoLinhas" width="400px" height="400px"></canvas>
+                <div class="container">
+                    <div class="text" style="text-align: center;">
+                        <h3>Histórico de Partidas</h3>
+                    </div>
+                    <div class="partidas">
+                        <canvas id="graficoLinhas" width="400px" height="400px"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
@@ -182,7 +185,7 @@
                 plugins: {
                     legend: {
                         display: true,
-                        position: 'right',
+                        position: 'top',
                         labels: {
                             color: '#fff',
                             boxWidth: 20,
