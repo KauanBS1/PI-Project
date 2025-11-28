@@ -91,6 +91,10 @@
                 <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
             </div>
             <div id="graficos">
+                <div class="text" style="
+    text-align: center;"">
+                    <h3>Histórico de Partidas</h3>
+                </div>
                 <div class="partidas">
                     <canvas id="graficoLinhas" width="400px" height="400px"></canvas>
                 </div>
@@ -138,7 +142,7 @@
         }
 
         var avg = somaPontuacao / totalPartidas;
-        mediaAcertos.innerHTML = avg;
+        mediaAcertos.innerHTML = avg.toFixed(0);
         // Fim Media de Pontos/Partida
 
         // Inicio total de Acertos e Erros

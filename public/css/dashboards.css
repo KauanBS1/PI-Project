@@ -532,12 +532,12 @@ canvas {
 .kpis{
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 1600px;
 }
 
 .dash .container{
   justify-content: center;
-  width: 95%;
+  width: 960px;
 }
 
 .kpi-card{
@@ -546,7 +546,7 @@ canvas {
   align-items: center;
   background-color: #131313;
   color: #f1f1f1;
-  width: 30%;
+  width: 310px;
   border-radius: 5px;
   margin-top: 40px;
   text-align: center;
@@ -598,10 +598,4 @@ canvas {
 .kpi-card .grafico h3{
   font-size: 20px;
   text-align: center;
-}
-
-.graficos {
-  display: flex;
-  gap: 40px;
-  justify-content: center;
 }
