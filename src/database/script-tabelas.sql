@@ -5,7 +5,6 @@
 /*
 comandos para mysql server
 */
-
 CREATE DATABASE singularity;
 
 USE singularity;
@@ -46,3 +45,17 @@ CREATE TABLE aviso (
 	fk_usuario INT,
 	FOREIGN KEY (fk_usuario) REFERENCES usuario(id_usuario)
 );
+
+SELECT * FROM usuario;
+SELECT * FROM partida;
+
+SELECT
+        partida.id_partida,
+        partida.pontuacao,
+        partida.acertos,
+        partida.erros,
+        quiz.nome
+    FROM partida
+        join quiz
+            on partida.fk_id_quiz = quiz.id_quiz
+        where partida.fk_id_usuario = 1;
